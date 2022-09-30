@@ -1,7 +1,7 @@
 import React from 'react';
 import App from "./App";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { UserContextProvider } from './context/userContext';
@@ -14,9 +14,9 @@ root.render(
   <React.StrictMode>
     <UserContextProvider>
       <QueryClientProvider client={client}>
-        <Router>
+      
           <App />
-        </Router>
+      
       </QueryClientProvider>
     </UserContextProvider>
   </React.StrictMode>

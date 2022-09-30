@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes,BrowserRouter } from "react-router-dom";
 
 import Landing from './pages/Landing';
 import Home from './pages/Home';
@@ -11,11 +11,13 @@ import Search from './pages/Search';
 import Detail from './pages/Detail';
 import NotFound from './component/NotFound'
 import Admin from './pages/Admin';
-import {API} from './config/api'
+import {API,setAuthToken} from './config/api'
 import {UserContext} from './context/userContext'
 import React, {useContext, useEffect} from 'react'
 
-
+if (localStorage.token){
+  setAuthToken(localStorage.token)
+}
 function App() {
 
   const [state, dispatch] = useContext(UserContext)
@@ -54,6 +56,7 @@ function App() {
 
   return (
 
+    <BrowserRouter>
     <Routes >
       <Route path='/' element={<Landing />} />
       <Route path='/home' element={<Home />} />
@@ -65,6 +68,7 @@ function App() {
       <Route path='/admin' element={<Admin />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
+    </BrowserRouter>
 
   );
 }

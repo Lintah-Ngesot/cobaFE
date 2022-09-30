@@ -14,14 +14,14 @@ function Mycollection() {
 
   let { data: literaturs } = useQuery("literaturCache", async () => {
 
-    const config = {
+    const config = { 
         headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.token}`
         }
     }
 
-    const response = await API.get("/literaturs", config);
+    const response = await API.get("/collections", config);
     console.log("response literatur", response);
 
     const resultResponse = response.data.data;
@@ -29,6 +29,8 @@ function Mycollection() {
 
     return resultResponse;
   });
+
+  console.log("ini ",literatur)
 
   return (
     <>
@@ -46,13 +48,13 @@ function Mycollection() {
   return (
     <Col>
     <Card style={{border: "none"}}>
-      <Card.Img variant="top" src={imgg} style={{height: "350px", borderRadius: "10px"}}/>
+      {data.literatur.attache}
       <Card.Body style={{ backgroundColor: "black"}}>
-        <Card.Title style={{ backgroundColor: "black", color: "white", marginLeft: "-17px"}}>{data.title}</Card.Title>
+        <Card.Title style={{ backgroundColor: "black", color: "white", marginLeft: "-17px"}}>{data.literatur.title}</Card.Title>
         <Card.Text style={{ color: "white"}}>
           <Row style={{marginLeft: "-28px"}}>
-            <Col>{data.author}</Col>
-            <Col>{data.publicationdate}</Col>
+            <Col>{data.literatur.author}</Col>
+            <Col>{data.literatur.publicationdate}</Col>
           </Row>
         </Card.Text>
       </Card.Body>
