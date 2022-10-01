@@ -64,7 +64,7 @@ function App() {
       <Route path='/mycollection' element={<Mycollection />} />
       <Route path='/addliterature' element={<Addliterature />} />
       <Route path='/search' element={<Search />} />
-      <Route path='/detail' element={<Detail />} />
+      <Route path='/detail/:id' element={<Detail />} />
       <Route path='/admin' element={<Admin />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -1,26 +1,24 @@
 import React from 'react'
 import Navbars from '../component/Navbars'
 import Col from 'react-bootstrap/Col';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import { AiOutlineSearch } from 'react-icons/ai';
-import Literatur from '../image/literatur.png'
+import Literatur from '../assets/Vector.png'
 function Home() {
     return (
         <>
             <div>
                 <Navbars />
             </div>
-            <img src={Literatur} alt="literatur" className="home-image" />
+
+            <img src={Literatur} alt="literatur" className="home-image"/>
             <br />
-            <div className="d-grid gap-2" >
+            <div style={{marginLeft: "400px"}}>
                 <Form>
                     <Row>
-                        <Col xs={7} style={{
-                            marginLeft: "210px",
-                            justifyContent: "center"
-                        }}>
-                            <Form.Control placeholder="Search for literature" />
+                        <Col>
+                            <Form.Control placeholder="Search for literature"  />
                         </Col>
                         <Col>
                             <Button

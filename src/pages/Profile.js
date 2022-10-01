@@ -9,7 +9,7 @@ import address from "../assets/profile/address.png";
 import Navbars from "../component/Navbars";
 import Editprofile from "../component/Editprofile";
 import Literatur from "../image/literatur.png";
-import imgg from "../assets/profile/blank-profile.png"
+import jurnal from "../assets/jurnal.png"
 import profile from "../assets/profile/profile.jfif"
 import { UserContext } from "../context/userContext";
 import {API} from '../config/api'
@@ -125,13 +125,13 @@ function Profile() {
           return (
             <Col>
             <Card style={{border: "none"}}>
-              <Card.Img variant="top" src={imgg} style={{height: "350px", borderRadius: "10px"}}/>
+              <Card.Img variant="top" src={jurnal} style={{height: "350px", borderRadius: "10px"}}/>
               <Card.Body style={{ backgroundColor: "black"}}>
-                <Card.Title style={{ backgroundColor: "black", color: "white", marginLeft: "-17px"}}>{data.title}</Card.Title>
+                <Card.Title style={{ backgroundColor: "black", color: "white"}}>{data.title}</Card.Title>
                 <Card.Text style={{ color: "white"}}>
-                  <Row style={{marginLeft: "-28px"}}>
+                  <Row>
                     <Col>{data.author}</Col>
-                    <Col style={{marginLeft: "140px"}}>{data.publicationdate}</Col>
+                    <Col>{data.publicationdate}</Col>
                   </Row>
                 </Card.Text>
               </Card.Body>

@@ -42,7 +42,7 @@ function Navbars() {
                                 </Link>
                             </Nav.Link>
                             <Nav.Link>
-                                <Button as={Link} to='/' onClick={handleLogOut} className="btn bg-danger">
+                                <Button as={Link} to='/' onClick={handleLogOut} className="btn" style={{backgroundColor: 'transparent', border:"none"}} >
                                     Logout
                                 </Button>
                             </Nav.Link>

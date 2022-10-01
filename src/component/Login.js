@@ -153,12 +153,12 @@ export default function Login({
                                 onClick={ShowPass}
                                 className="mt-3"
                             />
-                            <label for="Show" className="ms-1">
+                            <label for="Show" className="ms-1" style={{color: "white"}}>
                                 Show Password
                             </label>
                         </div>
                         <div className="d-grid gap-2 mt-3">
-                            <button className="btn1" onClick={() => setIsLogin(false)}>
+                            <button style={{border: 'none', height: "50px"}} className="btn1" onClick={() => setIsLogin(false)}>
                                 Login
                             </button>
                             <p className="warning">

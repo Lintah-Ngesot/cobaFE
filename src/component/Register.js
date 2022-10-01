@@ -181,12 +181,12 @@ export default function Register({
                 onClick={ShowPass}
                 className="mt-3"
               />
-              <label for="Show" className="ms-1">
+              <label for="Show" className="ms-1" style={{color: "white"}}>
                 Show Password
               </label>
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btnRegister" onClick={() => setRegisterShow(false)}  >Register</button>
+              <button type="submit" className="btnRegister" onClick={() => setRegisterShow(false)} style={{border: 'none', height: "50px"}} >Register</button>
               <p className="warning">
                 Already have an account?
                 <button className="btnHere" onClick={registerHere} >
