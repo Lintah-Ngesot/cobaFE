@@ -4,6 +4,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import Homes from '../image/home.png';
 import Literatur from '../image/literatur.png'
 
+
 // component
 import Login from '../component/Login'
 import Register from '../component/Register';

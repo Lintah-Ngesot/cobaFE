@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Route, Routes,BrowserRouter } from "react-router-dom";
+import { Route, Routes,BrowserRouter, useNavigate } from "react-router-dom";
 
 import Landing from './pages/Landing';
 import Home from './pages/Home';
@@ -19,6 +19,7 @@ if (localStorage.token){
   setAuthToken(localStorage.token)
 }
 function App() {
+  let Navigate = useNavigate();
 
   const [state, dispatch] = useContext(UserContext)
 
@@ -31,6 +32,10 @@ function App() {
         return dispatch({
           type: "AUTH_ERROR",
         });
+      }
+
+      if (response.data.data.status == "admin") {
+        Navigate("/admin")
       }
 
       // Get user data
@@ -56,7 +61,7 @@ function App() {
 
   return (
 
-    <BrowserRouter>
+    // <BrowserRouter>
     <Routes >
       <Route path='/' element={<Landing />} />
       <Route path='/home' element={<Home />} />
@@ -68,7 +73,7 @@ function App() {
       <Route path='/admin' element={<Admin />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
-    </BrowserRouter>
+    // </BrowserRouter>
 
   );
 }

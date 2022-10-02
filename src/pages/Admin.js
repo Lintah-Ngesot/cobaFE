@@ -4,7 +4,7 @@ import { Table, Card, Dropdown } from "react-bootstrap";
 
 const styles = {
     cardd: {
-        backgroundColor: "black",
+        // backgroundColor: "black",
         margin: "20px",
     },
 };
@@ -15,7 +15,7 @@ function Admin() {
             <div><NavbarAdmin /></div>
             <Card style={styles.cardd}>
                 <Card.Body className="text-light m-3">
-                    <Card.Title className="mb-4">Book verification</Card.Title>
+                    <Card.Title className="mb-4" style={{color: "black"}}>Book verification</Card.Title>
                     <Table striped bordered hover variant="light">
                         <thead>
                             <tr className="text-dark">

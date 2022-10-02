@@ -68,8 +68,8 @@ function Mycollection() {
         <Card.Title style={{ backgroundColor: "black", color: "white", marginLeft: "-17px"}}>{data?.literatur?.title}</Card.Title>
         <Card.Text style={{ color: "white"}}>
           <Row style={{marginLeft: "-28px"}}>
-            {/* <Col>{data?.author}</Col>
-            <Col>{data?.publicationdate}</Col> */}
+            <Col>{data?.literatur?.author}</Col>
+            <Col>{data?.literatur?.publicationdate}</Col>
           </Row>
         </Card.Text>
       </Card.Body>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Container from 'react-bootstrap/Container';
 import Dropdown from 'react-bootstrap/Dropdown'
 import Navbar from 'react-bootstrap/Navbar';
@@ -6,7 +6,19 @@ import Nav from 'react-bootstrap/Nav';
 import Logo from "../image/literatur.png";
 import Image2 from "../image/Ellipse 1.png";
 import Image3 from "../image/logout1.png";
+import { Link, useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/userContext';
+import { Button } from 'react-bootstrap';
 function NavbarAdmin() {
+    const [state, dispatch] = useContext(UserContext)
+
+    let Navigate = useNavigate();
+
+    function handleLogOut() {
+        return dispatch({
+            type:"LOGOUT",
+        })
+    }
     return (
         <>
             <Navbar bg="dark" expand="lg" className="sticky-sm-top" style={{ widht: "40px", height: "70px" }}>
@@ -37,9 +49,12 @@ function NavbarAdmin() {
                                             </Dropdown.Toggle>
                                             <Dropdown.Menu variant='dark'>
                                                 <hr></hr>
-                                                <Dropdown.Item href="/" className='d-flex ' >
+                                                <Dropdown.Item className='d-flex ' >
+        
+                                                    <Button as={Link} to="/" onClick={handleLogOut}>
                                                     <img src={Image3} alt="image4" className="image-logout" />
                                                     <p className='text-danger  mx-2 mt-3 mb-2'>Log out</p>
+                                                    </Button>
                                                 </Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>

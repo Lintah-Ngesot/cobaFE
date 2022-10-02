@@ -77,9 +77,7 @@ export default function Login({
                 }
                     const alert = (
                         Swal.fire(
-                          'Good job!',
-                          'YeaYy Loghin BerhasiEl',
-                          'success'
+                          'YeaYy AnDa BeRhasiElL LoghiEnn',
                         )
                 );
                 setMessage(alert);
