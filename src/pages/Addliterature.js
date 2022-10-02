@@ -101,6 +101,7 @@ function Addliterature() {
                 type="text"
                 placeholder="Publication Date"
                 name="publicationdate"
+                onChange={handleChange}
                 className="bg-dark text-white"
               />
             </div>

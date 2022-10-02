@@ -24,8 +24,10 @@ function Profile() {
 
   const [state, dispatch] = useContext(UserContext);
 
+  const [user, setUser] = useState(null)
 
-  console.log("testing", state);
+
+  console.log("testing user literatur", state);
 
   
 
@@ -40,14 +42,20 @@ function Profile() {
         }
     }
 
-    const response = await API.get(`/user/${state.user.user_id}`, config);
+    const response = await API.get(`/checkauth`, config);
     console.log("response literatur", response);
 
-    const resultResponse = response.data.data.literatur;
+    const liter = await API.get(`/user/${response.data?.data?.id}`)
+
+    const resultResponse = liter.data.data.literatur;
+    setUser(liter.data?.data)
     setLiteratur(resultResponse)
+    console.log("ini", resultResponse);
 
     return resultResponse;
   });
+
+  console.log(user);
 
   return (
     <>
@@ -64,7 +72,7 @@ function Profile() {
               </div>
               <div className="profile-details">
                 <span style={{ fontSize: "18px", fontWeight: "bold" }}>
-                  {state.user.email}
+                  {state?.user?.email}
                 </span>
                 <span>Email</span>
               </div>
@@ -76,7 +84,7 @@ function Profile() {
               <div className="profile-details">
                 <span style={{ fontSize: "18px", fontWeight: "bold" }}>
                   {" "}
-                  {state.user.gender}
+                  {user?.gender}
                 </span>
                 <span>Gender</span>
               </div>
@@ -87,7 +95,7 @@ function Profile() {
               </div>
               <div className="profile-details">
                 <span style={{ fontSize: "18px", fontWeight: "bold" }}>
-                  {state.user.phone}
+                  {user?.phone}
                 </span>
                 <span>Mobile Phone</span>
               </div>
@@ -98,7 +106,7 @@ function Profile() {
               </div>
               <div className="profile-details">
                 <span style={{ fontSize: "18px", fontWeight: "bold" }}>
-                  {state.user.address}
+                  {user?.address}
                 </span>
                 <span>Address</span>
               </div>
@@ -127,11 +135,11 @@ function Profile() {
             <Card style={{border: "none"}}>
               <Card.Img variant="top" src={jurnal} style={{height: "350px", borderRadius: "10px"}}/>
               <Card.Body style={{ backgroundColor: "black"}}>
-                <Card.Title style={{ backgroundColor: "black", color: "white"}}>{data.title}</Card.Title>
+                <Card.Title style={{ backgroundColor: "black", color: "white"}}>{data?.title}</Card.Title>
                 <Card.Text style={{ color: "white"}}>
                   <Row>
-                    <Col>{data.author}</Col>
-                    <Col>{data.publicationdate}</Col>
+                    <Col>{data?.author}</Col>
+                    <Col>{data?.publicationdate}</Col>
                   </Row>
                 </Card.Text>
               </Card.Body>

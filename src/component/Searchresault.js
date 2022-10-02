@@ -21,12 +21,12 @@ function Searchresault() {
     }
   );
 
-    // declare state
+    // filter search
   const [dataFilter, setDataFilter] = useState([]);
 
   function handleChangeLiterature(e) {
-    if (!e.target.value) {
-      setDataFilter(literaturs);
+    if (!e.target.value) { 
+      setDataFilter(literaturs); 
       return;
     }
     const filter = literaturs?.filter((item) => {

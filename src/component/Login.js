@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useMutation } from 'react-query';
 import { API } from "../config/api";
 import { UserContext } from "../context/userContext";
+import Swal from 'sweetalert2'
 
 export default function Login({
     loginShow,
@@ -74,11 +75,12 @@ export default function Login({
                 } else {
                     Navigate("/home");
                 }
-
-                const alert = (
-                    <Alert variant="success" className="py-1">
-                        Login success
-                    </Alert>
+                    const alert = (
+                        Swal.fire(
+                          'Good job!',
+                          'YeaYy Loghin BerhasiEl',
+                          'success'
+                        )
                 );
                 setMessage(alert);
             } else {

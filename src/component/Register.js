@@ -5,6 +5,7 @@ import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/userContext';
 import { API } from "../config/api";
+import Swal from 'sweetalert2'
 
 export default function Register({
   registerShow,
@@ -81,9 +82,11 @@ export default function Register({
         setMessage(alert);
       } else {
         const alert = (
-          <Alert variant="success" className="py-1">
-            Register success
-          </Alert>
+          Swal.fire(
+            'Good job!',
+            'YeaYy Register Berhasil',
+            'success'
+          )
         );
         console.log("else")
 
